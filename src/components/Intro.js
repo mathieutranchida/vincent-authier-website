@@ -2,9 +2,9 @@ import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import gsap from "gsap";
 
-import background from "../../assets/background.jpg";
+import background from "../assets/background.jpg";
 
-const Homepage = () => {
+const Intro = () => {
   let loadTextAnimation = useRef(null);
   let loadSlidingBackgroundAnimation = useRef(null);
   let mainTitleAnimation = useRef(null);
@@ -163,4 +163,4 @@ const ScrollDownDiv = styled.div`
   cursor: pointer;
 `;
 
-export default Homepage;
+export default Intro;
