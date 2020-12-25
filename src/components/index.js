@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 
 import Intro from "./Intro";
 import About from "./About";
+import InstaFeed from "./InstaFeed";
 
 import COLORS from "../constants";
 
@@ -30,6 +31,9 @@ const Homepage = () => {
         </Nav>
         <section id="about">
           <About />
+        </section>
+        <section>
+          <InstaFeed />
         </section>
       </Wrapper>
     </>
