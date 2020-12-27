@@ -126,10 +126,14 @@ const H1 = styled.h2`
 const Main = styled.div`
   display: flex;
   justify-content: center;
+  width: 100%;
   max-width: 1000px;
 `;
 
-const Contact = styled.div``;
+const Contact = styled.div`
+  width: 350px;
+  margin-right: 50px;
+`;
 
 const ContactDiv = styled.div`
   display: flex;
@@ -140,18 +144,72 @@ const ContactInfo = styled.div`
   margin-left: 10px;
 `;
 
-const ContactDescription = styled.div``;
+const ContactDescription = styled.div`
+  text-align: justify;
+  margin-top: 15px;
+`;
 
-const EmailJs = styled.div``;
+const EmailJs = styled.div`
+  width: 600px;
+`;
 
-const Form = styled.form``;
+const Form = styled.form`
+  width: 100%;
+`;
 
-const Div = styled.div``;
+const Div = styled.div`
+  width: 100%;
+  margin-bottom: 10px;
+`;
 
-const Input = styled.input``;
+const Input = styled.input`
+  width: 100%;
+  outline: none;
+  border: none;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 2px solid white;
+  background-color: ${COLORS.backgroundBody};
+  color: ${COLORS.textBody};
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 12pt;
+`;
 
-const Textarea = styled.textarea``;
+const Textarea = styled.textarea`
+  width: 100%;
+  height: 15px;
+  outline: none;
+  border: none;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 2px solid white;
+  background-color: ${COLORS.backgroundBody};
+  color: ${COLORS.textBody};
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 12pt;
+  padding: 0px 0px 4px 0px;
+`;
 
-const Button = styled.input``;
+const Button = styled.input`
+  float: right;
+  background-color: transparent;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 11pt;
+  padding: 7px 20px;
+  color: ${COLORS.textBody};
+  border: 2px solid ${COLORS.bordersContact};
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: 10px 0px 0px 0px;
+  &:disabled {
+    color: grey;
+    border: 2px grey solid;
+  }
+  &:hover:not([disabled]) {
+    cursor: pointer;
+  }
+`;
 
 export default Homepage;
