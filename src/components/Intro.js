@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import gsap from "gsap";
 
-import background from "../assets/background.jpg";
+import background from "../assets/background_1.0.jpg";
 
 const Intro = () => {
   let loadTextAnimation = useRef(null);
@@ -161,6 +161,7 @@ const ScrollDownDiv = styled.div`
   font-weight: 400;
   font-style: italic;
   cursor: pointer;
+  color: white;
 `;
 
 export default Intro;
