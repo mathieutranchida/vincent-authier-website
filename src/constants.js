@@ -3,6 +3,7 @@ const COLORS = {
   textHeader: "white",
   backgroundBody: "black",
   textBody: "white",
+  bordersContact: "white",
 };
 
 export default COLORS;

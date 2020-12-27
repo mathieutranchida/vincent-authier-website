@@ -6,6 +6,7 @@ import Intro from "./Intro";
 import About from "./About";
 import InstaStats from "./InstaStats";
 import Projects from "./Projects";
+import ContactMe from "./ContactMe";
 
 import COLORS from "../constants";
 
@@ -38,6 +39,9 @@ const Homepage = () => {
         </section>
         <section>
           <Projects />
+        </section>
+        <section>
+          <ContactMe />
         </section>
       </Wrapper>
     </>
