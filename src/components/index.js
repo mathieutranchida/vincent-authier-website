@@ -7,6 +7,7 @@ import About from "./About";
 import InstaStats from "./InstaStats";
 import Projects from "./Projects";
 import ContactMe from "./ContactMe";
+import GridPhoto from "./GridPhoto";
 
 import COLORS from "../constants";
 
@@ -42,6 +43,9 @@ const Homepage = () => {
         </section>
         <section>
           <ContactMe />
+        </section>
+        <section>
+          <GridPhoto />
         </section>
       </Wrapper>
     </>

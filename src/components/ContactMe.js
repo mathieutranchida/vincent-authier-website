@@ -37,7 +37,7 @@ const Homepage = () => {
   return (
     <>
       <Wrapper>
-        <H1>Contactez moi</H1>
+        <H1>Business Inquiries</H1>
         <Main>
           <Contact>
             <ContactDiv>
@@ -189,7 +189,7 @@ const Textarea = styled.textarea`
   color: ${COLORS.textBody};
   font-family: "Barlow Condensed", sans-serif;
   font-size: 12pt;
-  padding: 0px 0px 4px 0px;
+  padding: 0px 0px 4px 2px;
 `;
 
 const Button = styled.input`
