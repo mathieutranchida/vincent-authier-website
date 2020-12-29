@@ -1,27 +1,37 @@
 import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
-import gsap from "gsap";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import background from "../assets/background_1.0.jpg";
+import COLORS from "../constants";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Intro = () => {
+  let introSection = useRef(null);
   let loadTextAnimation = useRef(null);
   let loadSlidingBackgroundAnimation = useRef(null);
   let mainTitleAnimation = useRef(null);
   let scrollDownText = useRef(null);
 
   useEffect(() => {
-    const tl = gsap.timeline({ defaults: { ease: "power6.out" } });
-    tl.to(loadTextAnimation, { opacity: 0.75, duration: 1, delay: 0.75 });
-    tl.to(loadTextAnimation, { opacity: 0.5, duration: 0.5 });
-    tl.to(loadTextAnimation, { opacity: 0.75, duration: 0.5 });
-    tl.to(loadTextAnimation, { opacity: 0.5, duration: 0.5 });
-    tl.to(loadTextAnimation, { opacity: 0.75, duration: 0.5 });
-    tl.to(loadTextAnimation, {
+    // Start intro animation
+    const introTimeline = gsap.timeline({ defaults: { ease: "power6.out" } });
+    introTimeline.to(loadTextAnimation, {
+      opacity: 0.75,
+      duration: 1,
+      delay: 0.75,
+    });
+    introTimeline.to(loadTextAnimation, { opacity: 0.5, duration: 0.5 });
+    introTimeline.to(loadTextAnimation, { opacity: 0.75, duration: 0.5 });
+    introTimeline.to(loadTextAnimation, { opacity: 0.5, duration: 0.5 });
+    introTimeline.to(loadTextAnimation, { opacity: 0.75, duration: 0.5 });
+    introTimeline.to(loadTextAnimation, {
       opacity: 0,
       duration: 1,
     });
-    tl.to(
+    introTimeline.to(
       loadSlidingBackgroundAnimation,
       {
         opacity: 0,
@@ -31,61 +41,91 @@ const Intro = () => {
       },
       "-=1"
     );
-    tl.fromTo(
+    introTimeline.fromTo(
       mainTitleAnimation,
       { x: "-30%", opacity: 0 },
       { x: "0%", duration: 2, delay: -0.25, ease: "Power6.out" },
       "-=1"
     );
-    tl.fromTo(
+    introTimeline.fromTo(
       mainTitleAnimation,
       { opacity: 0 },
       { opacity: 1, duration: 2, ease: "Power6.out" },
       "-=1"
     );
-    tl.fromTo(
+    introTimeline.fromTo(
       scrollDownText,
       { opacity: 0 },
       { opacity: 1, duration: 1, ease: "Power6.out" },
       "-=1"
     );
+    // End intro animation
+
+    // Scroll down intro fade to black animation start
+    gsap.fromTo(
+      introSection,
+      { opacity: 1 },
+      {
+        duration: 1,
+        opacity: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: introSection,
+          start: "center-=100 top",
+          end: "bottom-=100 top",
+          toggleActions: "play none none reverse",
+          scrub: true,
+        },
+      }
+    );
+    // Scroll down intro fade to black animation end
   }, []);
 
   return (
     <>
-      <Background>
-        <IntroText
+      <Wrapper>
+        <Background
           ref={(e) => {
-            loadSlidingBackgroundAnimation = e;
+            introSection = e;
           }}
         >
-          <H1
+          <IntroText
             ref={(e) => {
-              loadTextAnimation = e;
+              loadSlidingBackgroundAnimation = e;
             }}
           >
-            Chargement...
-          </H1>
-        </IntroText>
-        <MainTitleDiv
-          ref={(e) => {
-            mainTitleAnimation = e;
-          }}
-        >
-          <MainTitle>Vincent Authier</MainTitle>
-          <MainTitleSub>Professional skier</MainTitleSub>
-        </MainTitleDiv>
-        <ScrollDownDiv
-          ref={(e) => {
-            scrollDownText = e;
-          }}
-        >
-          Scroll down
-        </ScrollDownDiv>
-      </Background>
+            <H1
+              ref={(e) => {
+                loadTextAnimation = e;
+              }}
+            >
+              Chargement...
+            </H1>
+          </IntroText>
+          <MainTitleDiv
+            ref={(e) => {
+              mainTitleAnimation = e;
+            }}
+          >
+            <MainTitle>Vincent Authier</MainTitle>
+            <MainTitleSub>Professional skier</MainTitleSub>
+          </MainTitleDiv>
+          <ScrollDownDiv
+            ref={(e) => {
+              scrollDownText = e;
+            }}
+          >
+            Scroll down
+          </ScrollDownDiv>
+        </Background>
+      </Wrapper>
     </>
   );
 };
+
+const Wrapper = styled.div`
+  background-color: ${COLORS.backgroundHeader};
+`;
 
 const Background = styled.div`
   height: 100vh;
