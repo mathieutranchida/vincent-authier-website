@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import emailjs from "emailjs-com";
 import styled from "styled-components";
+import { gsap } from "gsap";
 
 import COLORS from "../constants";
 
@@ -10,6 +11,8 @@ const Homepage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  let messageArea = useRef(null);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -92,6 +95,14 @@ const Homepage = () => {
                   placeholder="*message"
                   onChange={(ev) => {
                     setMessage(ev.target.value);
+                    gsap.to(messageArea, {
+                      duration: 1,
+                      height: "150px",
+                      ease: "power2",
+                    });
+                  }}
+                  ref={(e) => {
+                    messageArea = e;
                   }}
                 />
               </Div>

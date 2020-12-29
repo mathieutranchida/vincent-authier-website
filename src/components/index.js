@@ -17,7 +17,6 @@ import COLORS from "../constants";
 gsap.registerPlugin(ScrollTrigger);
 
 const Homepage = () => {
-  let photoGallery = useRef(null);
   let revealRefs = useRef([]);
   revealRefs.current = [];
 
