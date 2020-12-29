@@ -4,21 +4,13 @@ import styled from "styled-components";
 import COLORS from "../constants";
 
 import Img1 from "../assets/grid/gridGallery-1.jpg";
-import Img2 from "../assets/grid/gridGallery-2.jpg";
 import Img3 from "../assets/grid/gridGallery-3.jpg";
-import Img4 from "../assets/grid/gridGallery-4.jpg";
 import Img5 from "../assets/grid/gridGallery-5.jpg";
 import Img6 from "../assets/grid/gridGallery-6.jpg";
 import Img7 from "../assets/grid/gridGallery-7.jpg";
-import Img8 from "../assets/grid/gridGallery-8.jpg";
 import Img9 from "../assets/grid/gridGallery-9.jpg";
 import Img10 from "../assets/grid/gridGallery-10.jpg";
 import Img11 from "../assets/grid/gridGallery-11.jpg";
-import Img12 from "../assets/grid/gridGallery-12.jpg";
-import Img13 from "../assets/grid/gridGallery-13.jpg";
-import Img14 from "../assets/grid/gridGallery-14.jpg";
-import Img15 from "../assets/grid/gridGallery-15.jpg";
-import Img16 from "../assets/grid/gridGallery-16.jpg";
 import Img17 from "../assets/grid/gridGallery-17.jpg";
 
 const GridPhoto = () => {
@@ -26,11 +18,33 @@ const GridPhoto = () => {
     <>
       <Wrapper>
         <Main>
-          <Image1 src={Img6} />
-          <Image2 src={Img9} />
-          <Image3 src={Img3} />
-          <Image4 src={Img10} />
-          <Image5 src={Img11} />
+          <Section1Row1>
+            <Image src={Img6} />
+          </Section1Row1>
+          <Section1Row2>
+            <Image src={Img1} />
+          </Section1Row2>
+          <Section2Row1>
+            <Image src={Img10} />
+          </Section2Row1>
+          <Section2Row2>
+            <Image src={Img17} />
+          </Section2Row2>
+          <Section3Row1>
+            <Image src={Img3} />
+          </Section3Row1>
+          <Section3Row2>
+            <Image src={Img7} />
+          </Section3Row2>
+          <Section4Row1>
+            <Image src={Img9} />
+          </Section4Row1>
+          <Section4Row2>
+            <Image src={Img5} />
+          </Section4Row2>
+          <Section5Row1>
+            <Image src={Img11} />
+          </Section5Row1>
         </Main>
       </Wrapper>
     </>
@@ -39,44 +53,84 @@ const GridPhoto = () => {
 
 const Wrapper = styled.div`
   color: ${COLORS.textBody};
-  background-color: ${COLORS.textBody};
-  margin: 100px 0;
+  background-color: ${COLORS.backgroundBody};
+  padding: 50px 0;
 `;
 
 const Main = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(250, 4px);
-  grid-column-gap: 20px;
+  grid-template-rows: repeat(14, 2.5vw);
+  grid-gap: 20px;
+  padding: 0 20px;
+  @media (max-width: 2500px) {
+    grid-template-rows: repeat(14, 2.2vw);
+  }
+  @media (max-width: 1750px) {
+    grid-template-rows: repeat(14, 2vw);
+  }
+  @media (max-width: 1250px) {
+    grid-template-rows: repeat(14, 1.8vw);
+  }
+  @media (max-width: 1100px) {
+    grid-template-rows: repeat(14, 1.5vw);
+  }
+  @media (max-width: 950px) {
+    grid-template-rows: repeat(14, 1.3vw);
+  }
 `;
 
-const Image1 = styled.img`
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+`;
+
+const Section1Row1 = styled.section`
   grid-column: 1 / 2;
-  grid-row: 10 / 11;
-  width: 100%;
+  grid-row: 2 / 6;
 `;
 
-const Image2 = styled.img`
+const Section1Row2 = styled.section`
+  grid-column: 1 / 2;
+  grid-row: 6 / 14;
+`;
+
+const Section2Row1 = styled.section`
   grid-column: 2 / 3;
-  width: 100%;
+  grid-row: 1 / 9;
 `;
 
-const Image3 = styled.img`
+const Section2Row2 = styled.section`
+  grid-column: 2 / 3;
+  grid-row: 9 / 13;
+`;
+
+const Section3Row1 = styled.section`
   grid-column: 3 / 4;
-  grid-row: 26 / 27;
-  width: 100%;
+  grid-row: 3 / 7;
 `;
 
-const Image4 = styled.img`
+const Section3Row2 = styled.section`
+  grid-column: 3 / 4;
+  grid-row: 7 / 15;
+`;
+
+const Section4Row1 = styled.section`
   grid-column: 4 / 5;
-  grid-row: 19 /20;
-  width: 100%;
+  grid-row: 2 / 10;
 `;
 
-const Image5 = styled.img`
-  grid-column: 5 / 6;
-  grid-row: 45 / 56;
-  width: 100%;
+const Section4Row2 = styled.section`
+  grid-column: 4 / 5;
+  grid-row: 10 / 14;
+`;
+
+const Section5Row1 = styled.section`
+  grid-column: 5 /6;
+  grid-row: 4 / 12;
 `;
 
 export default GridPhoto;
