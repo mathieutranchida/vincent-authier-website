@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { gsap } from "gsap";
@@ -19,7 +19,20 @@ gsap.registerPlugin(ScrollTrigger);
 const Homepage = () => {
   let mainBody = useRef(null);
   let revealRefs = useRef([]);
+  let [introComplete, setIntroComplete] = useState(false);
   revealRefs.current = [];
+
+  useEffect(() => {
+    gsap.fromTo(
+      mainBody,
+      { display: "none" },
+      {
+        delay: 7.15,
+        display: "",
+        onComplete: changeIntroStatus,
+      }
+    );
+  }, []);
 
   useEffect(() => {
     revealRefs.current.forEach((el, index) => {
@@ -39,7 +52,11 @@ const Homepage = () => {
         }
       );
     });
-  }, []);
+  }, [introComplete]);
+
+  const changeIntroStatus = () => {
+    setIntroComplete(true);
+  };
 
   const addToRefs = (el) => {
     if (el && !revealRefs.current.includes(el)) {
