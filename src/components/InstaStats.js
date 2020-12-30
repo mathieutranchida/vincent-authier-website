@@ -60,8 +60,9 @@ const Wrapper = styled.div`
 
 const H1 = styled.h2`
   text-transform: uppercase;
-  font-style: italic;
-  font-weight: 500;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15pt;
 `;
 
 const Main = styled.div`
