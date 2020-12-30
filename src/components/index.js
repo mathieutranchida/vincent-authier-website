@@ -7,7 +7,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Intro from "./Intro";
 import About from "./About";
 import InstaStats from "./InstaStats";
-import Projects from "./Projects";
 import ContactMe from "./ContactMe";
 import GridPhoto from "./GridPhoto";
 import Footer from "./Footer";
@@ -94,9 +93,6 @@ const Homepage = () => {
           </section>
           <section ref={addToRefs}>
             <InstaStats />
-          </section>
-          <section ref={addToRefs}>
-            <Projects />
           </section>
           <section ref={addToRefs}>
             <GridPhoto />

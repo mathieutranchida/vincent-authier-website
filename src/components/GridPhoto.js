@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import ReactPlayer from "react-player/youtube";
+import { gsap } from "gsap";
 
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import { AiOutlineInstagram } from "react-icons/ai";
@@ -27,105 +28,162 @@ import Page2Img9 from "../assets/grid/page2/gridGallery-9.jpg";
 import Page2Img10 from "../assets/grid/page2/gridGallery-10.jpg";
 
 const GridPhoto = () => {
+  let gridOne = useRef(null);
+  let gridTwo = useRef(null);
+
+  useEffect(() => {
+    gsap.set(gridTwo, { x: "100%", autoAlpha: 0.1 });
+  }, []);
+
+  const showSlideTwo = () => {
+    gsap.to(gridOne, {
+      duration: 1,
+      x: "-100%",
+      autoAlpha: 0.1,
+      ease: "power3.inOut",
+    });
+    gsap.to(gridTwo, {
+      duration: 1,
+      x: "0%",
+      autoAlpha: 1,
+      ease: "power3.inOut",
+    });
+  };
+
+  const showSlideOne = () => {
+    gsap.to(gridOne, {
+      duration: 1,
+      x: "0%",
+      autoAlpha: 1,
+      ease: "power3.inOut",
+    });
+    gsap.to(gridTwo, {
+      duration: 1,
+      x: "100%",
+      autoAlpha: 0.1,
+      ease: "power3.inOut",
+    });
+  };
+
   return (
     <>
       <Wrapper>
-        <Main>
-          <Section1Row1>
-            <Image src={Page1Img6} alt="image gallery" />
-          </Section1Row1>
-          <Section1Row2>
-            <Image src={Page1Img1} alt="image gallery" />
-          </Section1Row2>
-          <Section2Row1>
-            <Image src={Page1Img10} alt="image gallery" />
-          </Section2Row1>
-          <Section2Row2>
-            <Image src={Page1Img17} alt="image gallery" />
-          </Section2Row2>
-          <Section3Row1>
-            <Image src={Page1Img3} alt="image gallery" />
-          </Section3Row1>
-          <Section3Row2>
-            <Image src={Page1Img7} alt="image gallery" />
-          </Section3Row2>
-          <Section4Row1>
-            <Image src={Page1Img9} alt="image gallery" />
-          </Section4Row1>
-          <Section4Row2>
-            <Image src={Page1Img5} alt="image gallery" />
-          </Section4Row2>
-          <Section5Row1>
-            <Image src={Page1Img11} alt="image gallery" />
-          </Section5Row1>
-          <Section5Row2>
-            <SeeMoreDiv>
-              <SeeMoreText>Voir plus</SeeMoreText> <FiChevronRight />
-            </SeeMoreDiv>
-          </Section5Row2>
-        </Main>
+        <MainWrapper>
+          <Main
+            ref={(e) => {
+              gridOne = e;
+            }}
+          >
+            <Section1Row1>
+              <Image src={Page1Img6} alt="image gallery" />
+            </Section1Row1>
+            <Section1Row2>
+              <Image src={Page1Img1} alt="image gallery" />
+            </Section1Row2>
+            <Section2Row1>
+              <Image src={Page1Img10} alt="image gallery" />
+            </Section2Row1>
+            <Section2Row2>
+              <Image src={Page1Img17} alt="image gallery" />
+            </Section2Row2>
+            <Section3Row1>
+              <Image src={Page1Img3} alt="image gallery" />
+            </Section3Row1>
+            <Section3Row2>
+              <Image src={Page1Img7} alt="image gallery" />
+            </Section3Row2>
+            <Section4Row1>
+              <Image src={Page1Img9} alt="image gallery" />
+            </Section4Row1>
+            <Section4Row2>
+              <Image src={Page1Img5} alt="image gallery" />
+            </Section4Row2>
+            <Section5Row1>
+              <Image src={Page1Img11} alt="image gallery" />
+            </Section5Row1>
+            <Section5Row2>
+              <SeeMoreDiv
+                onClick={() => {
+                  showSlideTwo();
+                }}
+              >
+                <SeeMoreText>Voir plus</SeeMoreText> <FiChevronRight />
+              </SeeMoreDiv>
+            </Section5Row2>
+          </Main>
 
-        <Second>
-          <Page2Section1Row1>
-            <Image src={Page2Img4} alt="image gallery" />
-          </Page2Section1Row1>
-          <Page2Section1Row2>
-            <ReturnDiv>
-              <FiChevronLeft />
-              <ReturnText>Retour</ReturnText>
-            </ReturnDiv>
-          </Page2Section1Row2>
-          <Page2Section2Row1>
-            <Image src={Page2Img2} alt="image gallery" />
-          </Page2Section2Row1>
-          <Page2Section2Row2>
-            <ReactPlayer
-              width="100%"
-              height="100%"
-              url="https://youtu.be/_GsBRHxuekw"
-            />
-          </Page2Section2Row2>
-          <Page2Section3Row1>
-            <ReactPlayer
-              width="100%"
-              height="100%"
-              url="https://www.youtube.com/watch?fbclid=IwAR14NPYG5Lr47BELZ6l71bbt6c5TQhi-yzJ4XlstRIFjBk_GpAaGrobxhyI&v=HmDtQWdPiZU&feature=youtu.be&ab_channel=VincentAuthier"
-            />
-          </Page2Section3Row1>
-          <Page2Section3Row2>
-            <Image src={Page2Img9} alt="image galery" />
-          </Page2Section3Row2>
-          <Page2Section4Row1>
-            <Image src={Page2Img8} alt="image galery" />
-          </Page2Section4Row1>
-          <Page2Section4Row2>
-            <ReactPlayer
-              width="100%"
-              height="100%"
-              url="https://youtu.be/6yEMHj8KmSo"
-            />
-          </Page2Section4Row2>
-          <Page2Section5Row1>
-            <DarkOverlay
-              href="https://www.instagram.com/vince_authier/"
-              target="_blank"
+          <Second
+            ref={(e) => {
+              gridTwo = e;
+            }}
+          >
+            <Page2Section1Row1>
+              <Image src={Page2Img4} alt="image gallery" />
+            </Page2Section1Row1>
+            <Page2Section1Row2
+              onClick={() => {
+                showSlideOne();
+              }}
             >
-              <InstaDiv>
-                <AiOutlineInstagram
-                  style={{
-                    width: "3vw",
-                    height: "3vw",
-                    textShadow: "4px 4px 11px rgba(150, 150, 150, 1)",
-                  }}
-                />
-              </InstaDiv>
-              <MoreContent>Voir plus de contenu sur mon instagram</MoreContent>
-            </DarkOverlay>
-          </Page2Section5Row1>
-          <Page2Section5Row2>
-            <Image src={Page2Img10} alt="image galery" />
-          </Page2Section5Row2>
-        </Second>
+              <ReturnDiv>
+                <FiChevronLeft />
+                <ReturnText>Retour</ReturnText>
+              </ReturnDiv>
+            </Page2Section1Row2>
+            <Page2Section2Row1>
+              <Image src={Page2Img2} alt="image gallery" />
+            </Page2Section2Row1>
+            <Page2Section2Row2>
+              <ReactPlayer
+                width="100%"
+                height="100%"
+                url="https://youtu.be/_GsBRHxuekw"
+              />
+            </Page2Section2Row2>
+            <Page2Section3Row1>
+              <ReactPlayer
+                width="100%"
+                height="100%"
+                url="https://www.youtube.com/watch?fbclid=IwAR14NPYG5Lr47BELZ6l71bbt6c5TQhi-yzJ4XlstRIFjBk_GpAaGrobxhyI&v=HmDtQWdPiZU&feature=youtu.be&ab_channel=VincentAuthier"
+              />
+            </Page2Section3Row1>
+            <Page2Section3Row2>
+              <Image src={Page2Img9} alt="image galery" />
+            </Page2Section3Row2>
+            <Page2Section4Row1>
+              <Image src={Page2Img8} alt="image galery" />
+            </Page2Section4Row1>
+            <Page2Section4Row2>
+              <ReactPlayer
+                width="100%"
+                height="100%"
+                url="https://youtu.be/6yEMHj8KmSo"
+              />
+            </Page2Section4Row2>
+            <Page2Section5Row1>
+              <DarkOverlay
+                href="https://www.instagram.com/vince_authier/"
+                target="_blank"
+              >
+                <InstaDiv>
+                  <AiOutlineInstagram
+                    style={{
+                      width: "3vw",
+                      height: "3vw",
+                      textShadow: "4px 4px 11px rgba(150, 150, 150, 1)",
+                    }}
+                  />
+                </InstaDiv>
+                <MoreContent>
+                  Voir plus de contenu sur mon instagram
+                </MoreContent>
+              </DarkOverlay>
+            </Page2Section5Row1>
+            <Page2Section5Row2>
+              <Image src={Page2Img10} alt="image galery" />
+            </Page2Section5Row2>
+          </Second>
+        </MainWrapper>
       </Wrapper>
     </>
   );
@@ -135,6 +193,13 @@ const Wrapper = styled.div`
   color: ${COLORS.textBody};
   background-color: ${COLORS.backgroundBody};
   padding: 50px 0;
+  position: relative;
+`;
+
+const MainWrapper = styled.div`
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
 `;
 
 const Image = styled.img`
@@ -241,6 +306,8 @@ const SeeMoreText = styled.div`
 
 const Second = styled.div`
   display: grid;
+  position: absolute;
+  top: 0;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(14, 2.5vw);
   grid-gap: 20px;
