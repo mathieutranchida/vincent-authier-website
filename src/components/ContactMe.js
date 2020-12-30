@@ -104,6 +104,13 @@ const Homepage = () => {
                   ref={(e) => {
                     messageArea = e;
                   }}
+                  onSelect={() => {
+                    gsap.to(messageArea, {
+                      duration: 1,
+                      height: "150px",
+                      ease: "power2",
+                    });
+                  }}
                 />
               </Div>
               <Button

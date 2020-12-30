@@ -61,6 +61,43 @@ const Intro = () => {
     );
     // End intro animation
 
+    // Scroll down fade out title animation start
+    gsap.fromTo(
+      mainTitleAnimation,
+      { x: "0%" },
+      {
+        duration: 1,
+        x: "30%",
+        ease: "none",
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: introSection,
+          start: "top top",
+          end: "center top",
+          toggleActions: "play none none reverse",
+          scrub: true,
+        },
+      }
+    );
+    // Scroll down fade out title animation end
+
+    gsap.fromTo(
+      scrollDownText,
+      { y: "0%" },
+      {
+        duration: 0.5,
+        y: "25%",
+        ease: "none",
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: introSection,
+          start: "top top",
+          end: "top+=200 top",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
     // Scroll down intro fade to black animation start
     gsap.fromTo(
       introSection,
@@ -72,7 +109,7 @@ const Intro = () => {
         scrollTrigger: {
           trigger: introSection,
           start: "center-=100 top",
-          end: "bottom-=100 top",
+          end: "bottom-=50 top",
           toggleActions: "play none none reverse",
           scrub: true,
         },

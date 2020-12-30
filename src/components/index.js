@@ -17,6 +17,7 @@ import COLORS from "../constants";
 gsap.registerPlugin(ScrollTrigger);
 
 const Homepage = () => {
+  let mainBody = useRef(null);
   let revealRefs = useRef([]);
   revealRefs.current = [];
 
@@ -33,7 +34,7 @@ const Homepage = () => {
             id: `section-${index + 1}`,
             trigger: el,
             start: "top center+=200",
-            toggleActions: "play none none none",
+            toggleActions: "play none none reverse",
           },
         }
       );
@@ -50,38 +51,44 @@ const Homepage = () => {
     <>
       <Wrapper>
         <Intro />
-        <Nav>
-          <Ul>
-            <Li>
-              <Link to="#about">À propos</Link>
-            </Li>
-            <Li>
-              <Link to="#">Projets</Link>
-            </Li>
-            <Li>
-              <Link to="#">Portfolio</Link>
-            </Li>
-            <Li>
-              <Link to="#">Contact</Link>
-            </Li>
-          </Ul>
-        </Nav>
-        <section ref={addToRefs}>
-          <About />
-        </section>
-        <section ref={addToRefs}>
-          <InstaStats />
-        </section>
-        <section ref={addToRefs}>
-          <Projects />
-        </section>
-        <section ref={addToRefs}>
-          <GridPhoto />
-        </section>
-        <section ref={addToRefs}>
-          <ContactMe />
-        </section>
-        <Footer />
+        <Main
+          ref={(e) => {
+            mainBody = e;
+          }}
+        >
+          <Nav>
+            <Ul>
+              <Li>
+                <Link to="#">À propos</Link>
+              </Li>
+              <Li>
+                <Link to="#">Projets</Link>
+              </Li>
+              <Li>
+                <Link to="#">Portfolio</Link>
+              </Li>
+              <Li>
+                <Link to="#">Contact</Link>
+              </Li>
+            </Ul>
+          </Nav>
+          <section ref={addToRefs}>
+            <About />
+          </section>
+          <section ref={addToRefs}>
+            <InstaStats />
+          </section>
+          <section ref={addToRefs}>
+            <Projects />
+          </section>
+          <section ref={addToRefs}>
+            <GridPhoto />
+          </section>
+          <section ref={addToRefs}>
+            <ContactMe />
+          </section>
+          <Footer />
+        </Main>
       </Wrapper>
     </>
   );
@@ -91,9 +98,12 @@ const Wrapper = styled.div`
   background-color: ${COLORS.backgroundBody};
 `;
 
+const Main = styled.div``;
+
 const Nav = styled.nav`
   position: sticky;
   top: 0;
+  z-index: 1000;
 `;
 
 const Ul = styled.ul`
