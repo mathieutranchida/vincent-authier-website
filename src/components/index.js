@@ -72,22 +72,6 @@ const Homepage = () => {
             mainBody = e;
           }}
         >
-          <Nav>
-            <Ul>
-              <Li>
-                <Link to="#">À propos</Link>
-              </Li>
-              <Li>
-                <Link to="#">Projets</Link>
-              </Li>
-              <Li>
-                <Link to="#">Portfolio</Link>
-              </Li>
-              <Li>
-                <Link to="#">Contact</Link>
-              </Li>
-            </Ul>
-          </Nav>
           <section ref={addToRefs}>
             <About />
           </section>
@@ -112,33 +96,5 @@ const Wrapper = styled.div`
 `;
 
 const Main = styled.div``;
-
-const Nav = styled.nav`
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-`;
-
-const Ul = styled.ul`
-  width: 100%;
-  margin: 0px;
-  display: flex;
-  justify-content: flex-end;
-  box-sizing: border-box;
-  padding: 20px;
-  background: ${COLORS.backgroundHeader};
-`;
-
-const Li = styled.li`
-  list-style: none;
-  margin-right: 20px;
-  font-size: 25px;
-  font-weight: 400;
-`;
-
-const Link = styled(NavLink)`
-  text-decoration: none;
-  color: ${COLORS.textHeader};
-`;
 
 export default Homepage;
