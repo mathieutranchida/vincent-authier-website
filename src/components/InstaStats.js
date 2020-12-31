@@ -8,7 +8,12 @@ import {
   BsHeart,
   BsPersonCheck,
   BsGrid,
+  BsPieChart,
+  BsGeo,
+  BsCalendar,
 } from "react-icons/bs";
+
+import { FiMapPin } from "react-icons/fi";
 
 const InstaStats = () => {
   const logoStyle = { height: "30px", width: "35px" };
@@ -42,6 +47,31 @@ const InstaStats = () => {
             <InfoTitle>Nombre de posts</InfoTitle>
             <InfoDetail>75</InfoDetail>
           </InfoDiv>
+          <InfoDiv>
+            <BsPieChart style={logoStyle} />
+            <InfoTitle>Homme / Femme</InfoTitle>
+            <InfoDetail>78% / 22%</InfoDetail>
+          </InfoDiv>
+          <InfoDiv>
+            <FiMapPin style={logoStyle} />
+            <InfoTitle>Pays principal</InfoTitle>
+            <InfoDetail>Canada (76.7%)</InfoDetail>
+          </InfoDiv>
+          <InfoDiv>
+            <BsGeo style={logoStyle} />
+            <InfoTitle>Ville principale</InfoTitle>
+            <InfoDetail>Montreal (50%)</InfoDetail>
+          </InfoDiv>
+          <InfoDiv>
+            <BsCalendar style={logoStyle} />
+            <InfoTitle>Tranche d'âge #1</InfoTitle>
+            <InfoDetail>18 - 24 ans (54.2%)</InfoDetail>
+          </InfoDiv>
+          <InfoDiv>
+            <BsCalendar style={logoStyle} />
+            <InfoTitle>Tranche d'âge #2</InfoTitle>
+            <InfoDetail>25 - 34 ans (28.7%)</InfoDetail>
+          </InfoDiv>
         </Main>
       </Wrapper>
     </>
@@ -55,7 +85,7 @@ const Wrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 50px;
+  padding: 50px 25px;
 `;
 
 const H1 = styled.h2`
@@ -63,14 +93,27 @@ const H1 = styled.h2`
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
   font-size: 15pt;
+  text-align: center;
 `;
 
 const Main = styled.div`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 190px);
+  grid-column-gap: 10px;
+  grid-row-gap: 25px;
+  justify-content: center;
   width: 100%;
-  max-width: 1020px;
+  max-width: 1000px;
   margin: 10px 0px 0px 0px;
+  @media (max-width: 445px) {
+    grid-template-columns: repeat(auto-fit, 150px);
+  }
+  @media (max-width: 360px) {
+    grid-template-columns: repeat(auto-fit, 140px);
+  }
+  @media (max-width: 340px) {
+    grid-template-columns: repeat(auto-fit, 120px);
+  }
 `;
 
 const InfoDiv = styled.div`
@@ -78,7 +121,6 @@ const InfoDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0px 10px;
 `;
 
 const InfoTitle = styled.div`
@@ -87,12 +129,24 @@ const InfoTitle = styled.div`
   text-transform: uppercase;
   font-weight: 400;
   text-align: center;
+  @media (max-width: 360px) {
+    font-size: 13pt;
+  }
+  @media (max-width: 340px) {
+    font-size: 12pt;
+  }
 `;
 
 const InfoDetail = styled.div`
-  font-size: 15pt;
-  text-transform: uppercase;
-  font-weight: 500;
+  font-size: 13pt;
+  font-weight: 300;
+  text-align: center;
+  @media (max-width: 360px) {
+    font-size: 12pt;
+  }
+  @media (max-width: 340px) {
+    font-size: 11pt;
+  }
 `;
 
 export default InstaStats;
