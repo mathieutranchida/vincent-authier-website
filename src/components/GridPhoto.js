@@ -67,7 +67,7 @@ const GridPhoto = () => {
 
   return (
     <>
-      <Wrapper>
+      <DesktopWrapper>
         <MainWrapper>
           <Main
             ref={(e) => {
@@ -184,16 +184,24 @@ const GridPhoto = () => {
             </Page2Section5Row2>
           </Second>
         </MainWrapper>
-      </Wrapper>
+      </DesktopWrapper>
+      <MobileWrapper>
+        <MobileImage src={Page2Img2} alt="image galery" />
+        <MobileImage src={Page1Img11} alt="image galery" />
+        <MobileImage src={Page1Img6} alt="image galery" />
+      </MobileWrapper>
     </>
   );
 };
 
-const Wrapper = styled.div`
+const DesktopWrapper = styled.div`
   color: ${COLORS.textBody};
   background-color: ${COLORS.backgroundBody};
   padding: 50px 0;
   position: relative;
+  @media (max-width: 700px) {
+    display: none;
+  }
 `;
 
 const MainWrapper = styled.div`
@@ -429,6 +437,26 @@ const MoreContent = styled.div`
 const Page2Section5Row2 = styled.section`
   grid-column: 5 / 6;
   grid-row: 6 / 14;
+`;
+
+const MobileWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 10px 0px;
+  @media (min-width: 701px) {
+    display: none;
+  }
+`;
+
+const MobileImage = styled.img`
+  height: 100%;
+  width: 100%;
+  max-width: 92vw;
+  object-fit: cover;
+  padding-bottom: 4vw;
 `;
 
 export default GridPhoto;
