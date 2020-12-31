@@ -1,6 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -17,6 +16,7 @@ import COLORS from "../constants";
 gsap.registerPlugin(ScrollTrigger);
 
 const Homepage = () => {
+  let aboutRightText = useRef(null);
   let mainBody = useRef(null);
   let revealRefs = useRef([]);
   let [introComplete, setIntroComplete] = useState(false);
@@ -35,6 +35,22 @@ const Homepage = () => {
   }, []);
 
   useEffect(() => {
+    gsap.fromTo(
+      aboutRightText,
+      { y: "0" },
+      {
+        duration: 1,
+        y: "-1500px",
+        ease: "none",
+        scrollTrigger: {
+          trigger: mainBody,
+          start: "top bottom",
+          end: "bottom bottom",
+          toggleActions: "play none none reverse",
+          scrub: true,
+        },
+      }
+    );
     revealRefs.current.forEach((el, index) => {
       gsap.fromTo(
         el,
@@ -67,12 +83,28 @@ const Homepage = () => {
   return (
     <>
       <Wrapper>
-        <Intro />
+        <IntroWrapper>
+          <Intro />
+        </IntroWrapper>
+
         <Main
           ref={(e) => {
             mainBody = e;
           }}
         >
+          <AboutRightText
+            ref={(e) => {
+              aboutRightText = e;
+            }}
+          >
+            Vincent Authier Vincent Authier Vincent Authier Vincent Authier
+            Vincent Authier Vincent Authier Vincent Authier Vincent Authier
+            Vincent Authier Vincent Authier Vincent Authier Vincent Authier
+            Vincent Authier Vincent Authier Vincent Authier Vincent Authier
+            Vincent Authier Vincent Authier Vincent Authier Vincent Authier
+            Vincent Authier Vincent Authier Vincent Authier Vincent Authier
+            Vincent Authier Vincent Authier Vincent Authier
+          </AboutRightText>
           <section ref={addToRefs}>
             <About />
           </section>
@@ -97,8 +129,36 @@ const Homepage = () => {
 
 const Wrapper = styled.div`
   background-color: ${COLORS.backgroundBody};
+  height: 100%;
+  overflow-y: hidden;
+`;
+
+const IntroWrapper = styled.div`
+  position: relative;
 `;
 
 const Main = styled.div``;
+
+const AboutWrapper = styled.div``;
+
+const GridWrapper = styled.div``;
+
+const ContactWrapper = styled.div``;
+
+const AboutRightText = styled.div`
+  text-transform: uppercase;
+  font-weight: 800;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15pt;
+  color: ${COLORS.movingBorder};
+  width: 6000px;
+  transform-origin: 0 26px;
+  transform: rotate(90deg);
+  position: absolute;
+  top: 100vh;
+  left: calc(100vw - 26px);
+  z-index: 5000;
+  user-select: none;
+`;
 
 export default Homepage;

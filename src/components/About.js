@@ -38,7 +38,7 @@ const Wrapper = styled.div`
   background-color: ${COLORS.backgroundBody};
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  padding-top: 50px;
 `;
 
 const Content = styled.div`
