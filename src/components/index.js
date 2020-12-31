@@ -10,6 +10,7 @@ import InstaStats from "./InstaStats";
 import ContactMe from "./ContactMe";
 import GridPhoto from "./GridPhoto";
 import Footer from "./Footer";
+import Sponsors from "./Sponsors";
 
 import COLORS from "../constants";
 
@@ -74,6 +75,9 @@ const Homepage = () => {
         >
           <section ref={addToRefs}>
             <About />
+          </section>
+          <section ref={addToRefs}>
+            <Sponsors />
           </section>
           <section ref={addToRefs}>
             <InstaStats />

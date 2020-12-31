@@ -101,7 +101,7 @@ const Main = styled.div`
   grid-template-columns: repeat(auto-fit, 190px);
   grid-column-gap: 10px;
   grid-row-gap: 25px;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
   max-width: 1000px;
   margin: 10px 0px 0px 0px;
