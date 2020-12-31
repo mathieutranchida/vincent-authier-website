@@ -40,21 +40,23 @@ const Homepage = () => {
   return (
     <>
       <Wrapper>
-        <H1>Business Inquiries</H1>
+        <H1>Contact</H1>
         <Main>
           <Contact>
-            <ContactDiv>
-              <FiMail />
-              <ContactInfo>vince.authier@gmail.com</ContactInfo>
-            </ContactDiv>
-            <ContactDiv>
-              <FiPhone />
-              <ContactInfo>(438) 696-9696</ContactInfo>
-            </ContactDiv>
-            <ContactDiv>
-              <FiMapPin />
-              <ContactInfo>Montreal, QC</ContactInfo>
-            </ContactDiv>
+            <ContactMain>
+              <ContactDiv>
+                <FiMail />
+                <ContactInfo>vince.authier@gmail.com</ContactInfo>
+              </ContactDiv>
+              <ContactDiv>
+                <FiPhone />
+                <ContactInfo>(438) 696-9696</ContactInfo>
+              </ContactDiv>
+              <ContactDiv>
+                <FiMapPin />
+                <ContactInfo>Montreal, QC</ContactInfo>
+              </ContactDiv>
+            </ContactMain>
             <ContactDescription>
               Je représente des compagnies de ski depuis maintenant 5 ans. En
               effet, je suis actuellement commandité par Surface Skis, Axis
@@ -64,6 +66,7 @@ const Homepage = () => {
             </ContactDescription>
           </Contact>
           <EmailJs>
+            <H2>Envoies moi un mail</H2>
             <Form className="contact-form" onSubmit={sendEmail}>
               <Input type="hidden" name="contact_number" />
               <Div>
@@ -133,6 +136,15 @@ const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   padding: 50px;
+  @media (max-width: 700px) {
+    padding: 0px 50px;
+  }
+  @media (max-width: 650px) {
+    padding: 0px 40px;
+  }
+  @media (max-width: 500px) {
+    padding: 0px 25px;
+  }
 `;
 
 const H1 = styled.h2`
@@ -140,6 +152,21 @@ const H1 = styled.h2`
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
   font-size: 15pt;
+  text-align: center;
+  @media (max-width: 700px) {
+    margin-bottom: 0px;
+  }
+`;
+
+const H2 = styled.h2`
+  @media (min-width: 701px) {
+    display: none;
+  }
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13pt;
+  text-align: center;
 `;
 
 const Main = styled.div`
@@ -147,11 +174,36 @@ const Main = styled.div`
   justify-content: center;
   width: 100%;
   max-width: 1000px;
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
 `;
 
 const Contact = styled.div`
   width: 350px;
   margin-right: 50px;
+  @media (max-width: 700px) {
+    width: 100%;
+    margin: 25px 0px;
+  }
+`;
+
+const ContactMain = styled.div`
+  @media (max-width: 700px) {
+    display: grid;
+    grid-template-columns: 165px 107px 93px;
+    grid-column-gap: 25px;
+    justify-content: center;
+  }
+  @media (max-width: 468px) {
+    grid-template-columns: 165px 107px;
+    grid-column-gap: 25px;
+    justify-content: left;
+  }
+  @media (max-width: 345px) {
+    grid-template-columns: 165px;
+    grid-column-gap: 25px;
+  }
 `;
 
 const ContactDiv = styled.div`
@@ -169,7 +221,7 @@ const ContactDescription = styled.div`
 `;
 
 const EmailJs = styled.div`
-  width: 600px;
+  width: calc(100% - 4px);
 `;
 
 const Form = styled.form`
@@ -196,7 +248,8 @@ const Input = styled.input`
 `;
 
 const Textarea = styled.textarea`
-  width: 100%;
+  width: calc(100% + 2px);
+
   height: 15px;
   outline: none;
   border: none;
