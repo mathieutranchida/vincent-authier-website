@@ -47,7 +47,11 @@ const Wrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 50px 25px;
+  padding: 25px 25px 50px;
+  @media (max-width: 700px) {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
 `;
 
 const H1 = styled.h2`
@@ -67,18 +71,33 @@ const Main = styled.div`
   width: 100%;
   max-width: 1000px;
   margin: 10px 0px 0px 0px;
+  @media (max-width: 1122px) {
+    justify-content: center;
+    grid-column-gap: 50px;
+  }
+  @media (max-width: 1039px) {
+    justify-content: center;
+    grid-column-gap: 50px;
+  }
+  @media (max-width: 900px) {
+    grid-column-gap: 25px;
+  }
   @media (max-width: 800px) {
     grid-template-columns: repeat(3, 100px);
-    justify-content: center;
     grid-column-gap: 75px;
   }
   @media (max-width: 575px) {
     grid-template-columns: repeat(2, 100px);
     grid-column-gap: 100px;
     grid-row-gap: 50px;
-    margin-top: 25px;
+    margin-top: 10px;
   }
   @media (max-width: 500px) {
+    grid-template-columns: repeat(2, 100px);
+    grid-column-gap: 100px;
+    grid-row-gap: 50px;
+  }
+  @media (max-width: 400px) {
     grid-template-columns: repeat(2, 100px);
     grid-column-gap: 50px;
     grid-row-gap: 25px;

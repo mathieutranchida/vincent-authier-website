@@ -240,6 +240,9 @@ const Main = styled.div`
   @media (max-width: 950px) {
     grid-template-rows: repeat(14, 1.3vw);
   }
+  @media (max-width: 850px) {
+    grid-template-rows: repeat(14, 1.1vw);
+  }
 `;
 
 const Section1Row1 = styled.section`
@@ -432,6 +435,7 @@ const MoreContent = styled.div`
   text-transform: uppercase;
   font-size: 11pt;
   text-shadow: 4px 4px 11px rgba(50, 50, 50, 1);
+  padding: 5px;
 `;
 
 const Page2Section5Row2 = styled.section`

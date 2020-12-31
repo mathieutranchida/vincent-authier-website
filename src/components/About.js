@@ -20,13 +20,13 @@ const About = () => {
             je pratique le vélo de route durant l’été. Je tente donc de rester
             actif et ce, tout au long de l’année.
           </Paragraph>
-          <Paragraph>
+          <LastParagraph>
             Je représente des compagnies de ski depuis maintenant 5 ans. En
             effet, je suis actuellement commandité par Surface Skis, Axis
             Boutique, Giro, Matéina et je suis aussi ambassadeur pour Les
             Sommets. J’ai beaucoup appris au cours de ces années en ce qui
             concerne la représentation ainsi que la promotion de marques.
-          </Paragraph>
+          </LastParagraph>
         </Content>
       </Wrapper>
     </>
@@ -38,18 +38,29 @@ const Wrapper = styled.div`
   background-color: ${COLORS.backgroundBody};
   display: flex;
   justify-content: center;
+  margin-top: 50px;
 `;
 
 const Content = styled.div`
   max-width: 1000px;
-  margin: 50px 50px 70px 50px;
+  margin: 50px 50px 60px 50px;
   text-align: justify;
+  @media (max-width: 700px) {
+    margin: 30px 50px 50px 50px;
+  }
 `;
 
 const Paragraph = styled.p`
   color: ${COLORS.textBody};
   margin: 0px;
   padding: 10px 0px;
+  text-indent: 25px;
+`;
+
+const LastParagraph = styled.p`
+  color: ${COLORS.textBody};
+  margin: 0px;
+  padding: 10px 0px 0px;
   text-indent: 25px;
 `;
 

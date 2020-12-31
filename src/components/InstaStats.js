@@ -103,8 +103,11 @@ const Main = styled.div`
   grid-row-gap: 25px;
   justify-content: space-between;
   width: 100%;
-  max-width: 1000px;
-  margin: 10px 0px 0px 0px;
+  max-width: 1075px;
+  margin: 20px 0px 0px 0px;
+  @media (max-width: 1122px) {
+    justify-content: center;
+  }
   @media (max-width: 445px) {
     grid-template-columns: repeat(auto-fit, 150px);
   }
