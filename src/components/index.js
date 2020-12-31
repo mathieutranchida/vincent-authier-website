@@ -139,12 +139,6 @@ const IntroWrapper = styled.div`
 
 const Main = styled.div``;
 
-const AboutWrapper = styled.div``;
-
-const GridWrapper = styled.div``;
-
-const ContactWrapper = styled.div``;
-
 const AboutRightText = styled.div`
   text-transform: uppercase;
   font-weight: 800;
