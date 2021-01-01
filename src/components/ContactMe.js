@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import emailjs from "emailjs-com";
 import styled from "styled-components";
 import { gsap } from "gsap";
