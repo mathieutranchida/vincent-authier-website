@@ -178,6 +178,9 @@ const AboutRightText = styled.div`
   left: calc(100vw - 26px);
   z-index: 5000;
   user-select: none;
+  @media (max-width: 700px) {
+    display: none;
+  }
 `;
 
 const AboutLeftText = styled.div`
@@ -194,6 +197,9 @@ const AboutLeftText = styled.div`
   left: 0px;
   z-index: 5000;
   user-select: none;
+  @media (max-width: 700px) {
+    display: none;
+  }
 `;
 
 export default Homepage;
