@@ -224,7 +224,7 @@ const Main = styled.div`
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(14, 2.5vw);
   grid-gap: 20px;
-  padding: 0 20px;
+  padding: 0 30px;
   @media (max-width: 2500px) {
     grid-template-rows: repeat(14, 2.2vw);
   }
@@ -322,7 +322,7 @@ const Second = styled.div`
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(14, 2.5vw);
   grid-gap: 20px;
-  padding: 0 20px;
+  padding: 0 30px;
   @media (max-width: 2500px) {
     grid-template-rows: repeat(14, 2.2vw);
   }

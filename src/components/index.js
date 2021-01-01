@@ -17,6 +17,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Homepage = () => {
   let aboutRightText = useRef(null);
+  let aboutLeftText = useRef(null);
   let mainBody = useRef(null);
   let revealRefs = useRef([]);
   let [introComplete, setIntroComplete] = useState(false);
@@ -40,7 +41,23 @@ const Homepage = () => {
       { y: "0" },
       {
         duration: 1,
-        y: "-1500px",
+        y: "-3000px",
+        ease: "none",
+        scrollTrigger: {
+          trigger: mainBody,
+          start: "top bottom",
+          end: "bottom bottom",
+          toggleActions: "play none none reverse",
+          scrub: true,
+        },
+      }
+    );
+    gsap.fromTo(
+      aboutLeftText,
+      { y: "0" },
+      {
+        duration: 1,
+        y: "3000px",
         ease: "none",
         scrollTrigger: {
           trigger: mainBody,
@@ -86,25 +103,11 @@ const Homepage = () => {
         <IntroWrapper>
           <Intro />
         </IntroWrapper>
-
         <Main
           ref={(e) => {
             mainBody = e;
           }}
         >
-          <AboutRightText
-            ref={(e) => {
-              aboutRightText = e;
-            }}
-          >
-            Vincent Authier Vincent Authier Vincent Authier Vincent Authier
-            Vincent Authier Vincent Authier Vincent Authier Vincent Authier
-            Vincent Authier Vincent Authier Vincent Authier Vincent Authier
-            Vincent Authier Vincent Authier Vincent Authier Vincent Authier
-            Vincent Authier Vincent Authier Vincent Authier Vincent Authier
-            Vincent Authier Vincent Authier Vincent Authier Vincent Authier
-            Vincent Authier Vincent Authier Vincent Authier
-          </AboutRightText>
           <section ref={addToRefs}>
             <About />
           </section>
@@ -123,21 +126,43 @@ const Homepage = () => {
           <Footer />
         </Main>
       </Wrapper>
+      <AboutRightText
+        ref={(e) => {
+          aboutRightText = e;
+        }}
+      >
+        Vincent Authier Vincent Authier Vincent Authier Vincent Authier Vincent
+        Authier Vincent Authier Vincent Authier Vincent Authier Vincent Authier
+        Vincent Authier Vincent Authier Vincent Authier Vincent Authier Vincent
+        Authier Vincent Authier Vincent Authier Vincent Authier Vincent Authier
+        Vincent Authier Vincent Authier Vincent Authier Vincent Authier Vincent
+        Authier Vincent Authier Vincent Authier Vincent Authier Vincent Authier
+      </AboutRightText>
+      <AboutLeftText
+        ref={(e) => {
+          aboutLeftText = e;
+        }}
+      >
+        Vincent Authier Vincent Authier Vincent Authier Vincent Authier Vincent
+        Authier Vincent Authier Vincent Authier Vincent Authier Vincent Authier
+        Vincent Authier Vincent Authier Vincent Authier Vincent Authier Vincent
+        Authier Vincent Authier Vincent Authier Vincent Authier Vincent Authier
+        Vincent Authier Vincent Authier Vincent Authier Vincent Authier Vincent
+        Authier Vincent Authier Vincent Authier Vincent Authier Vincent Authier
+      </AboutLeftText>
     </>
   );
 };
 
 const Wrapper = styled.div`
   background-color: ${COLORS.backgroundBody};
-  height: 100%;
-  overflow-y: hidden;
 `;
 
-const IntroWrapper = styled.div`
-  position: relative;
-`;
+const IntroWrapper = styled.div``;
 
-const Main = styled.div``;
+const Main = styled.div`
+  overflow: hidden;
+`;
 
 const AboutRightText = styled.div`
   text-transform: uppercase;
@@ -148,9 +173,25 @@ const AboutRightText = styled.div`
   width: 6000px;
   transform-origin: 0 26px;
   transform: rotate(90deg);
-  position: absolute;
-  top: 100vh;
+  position: fixed;
+  top: calc(100vh - 26px);
   left: calc(100vw - 26px);
+  z-index: 5000;
+  user-select: none;
+`;
+
+const AboutLeftText = styled.div`
+  text-transform: uppercase;
+  font-weight: 800;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15pt;
+  color: ${COLORS.movingBorder};
+  width: 6000px;
+  transform-origin: 0 0px;
+  transform: rotate(270deg);
+  position: fixed;
+  top: 0px;
+  left: 0px;
   z-index: 5000;
   user-select: none;
 `;
