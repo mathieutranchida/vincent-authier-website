@@ -8,25 +8,6 @@ import { AiOutlineInstagram } from "react-icons/ai";
 
 import COLORS from "../constants";
 
-// PAGE 1 PHOTOS
-import Page1Img1 from "../assets/grid/page1/gridGallery-1.jpg";
-import Page1Img3 from "../assets/grid/page1/gridGallery-3.jpg";
-import Page1Img5 from "../assets/grid/page1/gridGallery-5.jpg";
-import Page1Img6 from "../assets/grid/page1/gridGallery-6.jpg";
-import Page1Img7 from "../assets/grid/page1/gridGallery-7.jpg";
-import Page1Img9 from "../assets/grid/page1/gridGallery-9.jpg";
-import Page1Img10 from "../assets/grid/page1/gridGallery-10.jpg";
-import Page1Img11 from "../assets/grid/page1/gridGallery-11.jpg";
-import Page1Img17 from "../assets/grid/page1/gridGallery-17.jpg";
-
-// PAGE 2 PHOTOS
-import Page2Img1 from "../assets/grid/page2/gridGallery-1.jpg";
-import Page2Img2 from "../assets/grid/page2/gridGallery-2.jpg";
-import Page2Img4 from "../assets/grid/page2/gridGallery-4.jpg";
-import Page2Img8 from "../assets/grid/page2/gridGallery-8.jpg";
-import Page2Img9 from "../assets/grid/page2/gridGallery-9.jpg";
-import Page2Img10 from "../assets/grid/page2/gridGallery-10.jpg";
-
 const GridPhoto = () => {
   let gridOne = useRef(null);
   let gridTwo = useRef(null);
@@ -228,9 +209,18 @@ const GridPhoto = () => {
         </MainWrapper>
       </DesktopWrapper>
       <MobileWrapper>
-        <MobileImage src={Page2Img2} alt="image galery" />
-        <MobileImage src={Page1Img11} alt="image galery" />
-        <MobileImage src={Page1Img6} alt="image galery" />
+        <MobileImage
+          src="https://res.cloudinary.com/dvo6bq91o/image/upload/v1609595556/grid-phone/gridGallery-2_btdqjf.jpg"
+          alt="image galery"
+        />
+        <MobileImage
+          src="https://res.cloudinary.com/dvo6bq91o/image/upload/v1609595530/grid-phone/gridGallery-11_geigay.jpg"
+          alt="image galery"
+        />
+        <MobileImage
+          src="https://res.cloudinary.com/dvo6bq91o/image/upload/v1609595540/grid-phone/gridGallery-6_yahhs7.jpg"
+          alt="image galery"
+        />
       </MobileWrapper>
     </>
   );
