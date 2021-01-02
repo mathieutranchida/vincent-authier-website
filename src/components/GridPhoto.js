@@ -145,7 +145,10 @@ const GridPhoto = () => {
             }}
           >
             <Page2Section1Row1>
-              <Image src={Page2Img4} alt="image gallery" />
+              <Image
+                src="https://res.cloudinary.com/dvo6bq91o/image/upload/v1609595476/grid-desktop-page-two/gridGallery-4_dnuxic.jpg"
+                alt="image gallery"
+              />
             </Page2Section1Row1>
             <Page2Section1Row2
               onClick={() => {
@@ -158,7 +161,10 @@ const GridPhoto = () => {
               </ReturnDiv>
             </Page2Section1Row2>
             <Page2Section2Row1>
-              <Image src={Page2Img2} alt="image gallery" />
+              <Image
+                src="https://res.cloudinary.com/dvo6bq91o/image/upload/v1609595476/grid-desktop-page-two/gridGallery-2_aucl4o.jpg"
+                alt="image gallery"
+              />
             </Page2Section2Row1>
             <Page2Section2Row2>
               <ReactPlayer
@@ -175,10 +181,16 @@ const GridPhoto = () => {
               />
             </Page2Section3Row1>
             <Page2Section3Row2>
-              <Image src={Page2Img9} alt="image galery" />
+              <Image
+                src="https://res.cloudinary.com/dvo6bq91o/image/upload/v1609595476/grid-desktop-page-two/gridGallery-9_cu9zrh.jpg"
+                alt="image galery"
+              />
             </Page2Section3Row2>
             <Page2Section4Row1>
-              <Image src={Page2Img8} alt="image galery" />
+              <Image
+                src="https://res.cloudinary.com/dvo6bq91o/image/upload/v1609595476/grid-desktop-page-two/gridGallery-8_bmiadu.jpg"
+                alt="image galery"
+              />
             </Page2Section4Row1>
             <Page2Section4Row2>
               <ReactPlayer
@@ -207,7 +219,10 @@ const GridPhoto = () => {
               </DarkOverlay>
             </Page2Section5Row1>
             <Page2Section5Row2>
-              <Image src={Page2Img10} alt="image galery" />
+              <Image
+                src="https://res.cloudinary.com/dvo6bq91o/image/upload/v1609595477/grid-desktop-page-two/gridGallery-10_ci5bby.jpg"
+                alt="image galery"
+              />
             </Page2Section5Row2>
           </Second>
         </MainWrapper>
@@ -427,7 +442,7 @@ const Page2Section5Row1 = styled.section`
   grid-column: 5 / 6;
   grid-row: 2 / 6;
   background-color: grey;
-  background-image: url(${Page2Img1});
+  background-image: url("https://res.cloudinary.com/dvo6bq91o/image/upload/v1609595476/grid-desktop-page-two/gridGallery-1_rpcx4m.jpg");
   background-size: cover;
   background-position: center;
   cursor: pointer;
