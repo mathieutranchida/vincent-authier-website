@@ -75,31 +75,58 @@ const GridPhoto = () => {
             }}
           >
             <Section1Row1>
-              <Image src={Page1Img6} alt="image gallery" />
+              <Image
+                src="https://res.cloudinary.com/dvo6bq91o/image/upload/v1609595458/grid-desktop-page-one/gridGallery-6_llm903.jpg"
+                alt="image gallery"
+              />
             </Section1Row1>
             <Section1Row2>
-              <Image src={Page1Img1} alt="image gallery" />
+              <Image
+                src="https://res.cloudinary.com/dvo6bq91o/image/upload/v1609595457/grid-desktop-page-one/gridGallery-1_an5plc.jpg"
+                alt="image gallery"
+              />
             </Section1Row2>
             <Section2Row1>
-              <Image src={Page1Img10} alt="image gallery" />
+              <Image
+                src="https://res.cloudinary.com/dvo6bq91o/image/upload/v1609595458/grid-desktop-page-one/gridGallery-10_eydo5e.jpg"
+                alt="image gallery"
+              />
             </Section2Row1>
             <Section2Row2>
-              <Image src={Page1Img17} alt="image gallery" />
+              <Image
+                src="https://res.cloudinary.com/dvo6bq91o/image/upload/v1609595459/grid-desktop-page-one/gridGallery-17_drufiq.jpg"
+                alt="image gallery"
+              />
             </Section2Row2>
             <Section3Row1>
-              <Image src={Page1Img3} alt="image gallery" />
+              <Image
+                src="https://res.cloudinary.com/dvo6bq91o/image/upload/v1609595457/grid-desktop-page-one/gridGallery-3_tb0jc3.jpg"
+                alt="image gallery"
+              />
             </Section3Row1>
             <Section3Row2>
-              <Image src={Page1Img7} alt="image gallery" />
+              <Image
+                src="https://res.cloudinary.com/dvo6bq91o/image/upload/v1609595458/grid-desktop-page-one/gridGallery-7_tradzl.jpg"
+                alt="image gallery"
+              />
             </Section3Row2>
             <Section4Row1>
-              <Image src={Page1Img9} alt="image gallery" />
+              <Image
+                src="https://res.cloudinary.com/dvo6bq91o/image/upload/v1609595457/grid-desktop-page-one/gridGallery-9_ex9vub.jpg"
+                alt="image gallery"
+              />
             </Section4Row1>
             <Section4Row2>
-              <Image src={Page1Img5} alt="image gallery" />
+              <Image
+                src="https://res.cloudinary.com/dvo6bq91o/image/upload/v1609595457/grid-desktop-page-one/gridGallery-5_yg8vfx.jpg"
+                alt="image gallery"
+              />
             </Section4Row2>
             <Section5Row1>
-              <Image src={Page1Img11} alt="image gallery" />
+              <Image
+                src="https://res.cloudinary.com/dvo6bq91o/image/upload/v1609595458/grid-desktop-page-one/gridGallery-11_gwhgpj.jpg"
+                alt="image gallery"
+              />
             </Section5Row1>
             <Section5Row2>
               <SeeMoreDiv
