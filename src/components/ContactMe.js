@@ -115,6 +115,14 @@ const Homepage = () => {
                     });
                   }}
                 />
+                <TextareaReducedMotion
+                  name="message"
+                  value={message}
+                  placeholder="*message"
+                  onChange={(ev) => {
+                    setMessage(ev.target.value);
+                  }}
+                />
               </Div>
               <Button
                 type="submit"
@@ -255,7 +263,6 @@ const Input = styled.input`
 
 const Textarea = styled.textarea`
   width: calc(100% + 2px);
-
   height: 15px;
   outline: none;
   border: none;
@@ -268,6 +275,28 @@ const Textarea = styled.textarea`
   font-family: "Barlow Condensed", sans-serif;
   font-size: 12pt;
   padding: 0px 0px 4px 2px;
+  @media screen and (prefers-reduced-motion) {
+    display: none;
+  }
+`;
+
+const TextareaReducedMotion = styled.textarea`
+  width: calc(100% + 2px);
+  height: 150px;
+  outline: none;
+  border: none;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 2px solid white;
+  background-color: ${COLORS.backgroundBody};
+  color: ${COLORS.textBody};
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 12pt;
+  padding: 0px 0px 4px 2px;
+  @media screen and (prefers-reduced-motion: no-preference) {
+    display: none;
+  }
 `;
 
 const Button = styled.input`

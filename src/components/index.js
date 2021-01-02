@@ -213,6 +213,9 @@ const AboutRightText = styled.div`
   @media (max-width: 700px) {
     display: none;
   }
+  @media screen and (prefers-reduced-motion) {
+    display: none;
+  }
 `;
 
 const AboutLeftText = styled.div`
@@ -230,6 +233,9 @@ const AboutLeftText = styled.div`
   z-index: 5000;
   user-select: none;
   @media (max-width: 700px) {
+    display: none;
+  }
+  @media screen and (prefers-reduced-motion) {
     display: none;
   }
 `;
