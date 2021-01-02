@@ -3,13 +3,6 @@ import styled from "styled-components";
 
 import COLORS from "../constants";
 
-import axisLogo from "../assets/logo/axis-logo.png";
-import giroLogo from "../assets/logo/giro-logo.png";
-import maintenaLogo from "../assets/logo/maitena-logo.png";
-import oneillLogo from "../assets/logo/o'neill-logo.png";
-import snoprkLogo from "../assets/logo/snoprk-logo.png";
-import surfaceLogo from "../assets/logo/surface-logo.png";
-
 const Sponsors = () => {
   return (
     <>
@@ -17,22 +10,28 @@ const Sponsors = () => {
         <H1>Supporté par</H1>
         <Main>
           <LogoDiv>
-            <Logo src={axisLogo} alt="logo axis boutique" />
+            <Logo
+              src="https://res.cloudinary.com/dvo6bq91o/image/upload/v1609595593/logo-sponsors/axis-logo_kkv5zv.png"
+              alt="logo axis boutique"
+            />
           </LogoDiv>
           <LogoDiv>
-            <Logo src={giroLogo} alt="logo axis boutique" />
+            <Logo
+              src="https://res.cloudinary.com/dvo6bq91o/image/upload/v1609595593/logo-sponsors/maitena-logo_oumij9.png"
+              alt="logo maiteina"
+            />
           </LogoDiv>
           <LogoDiv>
-            <Logo src={maintenaLogo} alt="logo axis boutique" />
+            <Logo
+              src="https://res.cloudinary.com/dvo6bq91o/image/upload/v1609595594/logo-sponsors/surface-logo_qzqowq.png"
+              alt="logo surface skis"
+            />
           </LogoDiv>
           <LogoDiv>
-            <Logo src={oneillLogo} alt="logo axis boutique" />
-          </LogoDiv>
-          <LogoDiv>
-            <Logo src={surfaceLogo} alt="logo axis boutique" />
-          </LogoDiv>
-          <LogoDiv>
-            <Logo src={snoprkLogo} alt="logo axis boutique" />
+            <Logo
+              src="https://res.cloudinary.com/dvo6bq91o/image/upload/v1609595594/logo-sponsors/snoprk-logo_dsepfv.png"
+              alt="logo snoprk les sommets"
+            />
           </LogoDiv>
         </Main>
       </Wrapper>
@@ -69,41 +68,30 @@ const Main = styled.div`
   grid-row-gap: 25px;
   justify-content: space-between;
   width: 100%;
-  max-width: 1000px;
+  max-width: 800px;
   margin: 10px 0px 0px 0px;
-  @media (max-width: 1122px) {
+  @media (max-width: 1000px) {
     justify-content: center;
-    grid-column-gap: 50px;
-  }
-  @media (max-width: 1039px) {
-    justify-content: center;
-    grid-column-gap: 50px;
-  }
-  @media (max-width: 900px) {
-    grid-column-gap: 25px;
-  }
-  @media (max-width: 800px) {
-    grid-template-columns: repeat(3, 100px);
     grid-column-gap: 75px;
   }
-  @media (max-width: 575px) {
+  @media (max-width: 800px) {
+    grid-column-gap: 50px;
+  }
+  @media (max-width: 635px) {
     grid-template-columns: repeat(2, 100px);
     grid-column-gap: 100px;
     grid-row-gap: 50px;
     margin-top: 10px;
   }
   @media (max-width: 500px) {
-    grid-template-columns: repeat(2, 100px);
     grid-column-gap: 100px;
     grid-row-gap: 50px;
   }
   @media (max-width: 400px) {
-    grid-template-columns: repeat(2, 100px);
     grid-column-gap: 50px;
     grid-row-gap: 25px;
   }
   @media (max-width: 330px) {
-    grid-template-columns: repeat(2, 100px);
     grid-column-gap: 25px;
   }
 `;
