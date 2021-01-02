@@ -53,6 +53,22 @@ const Homepage = () => {
       }
     );
     gsap.fromTo(
+      aboutRightText,
+      { autoAlpha: 0 },
+      {
+        duration: 1,
+        autoAlpha: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: mainBody,
+          start: "top bottom",
+          end: "top center",
+          toggleActions: "play none none reverse",
+          scrub: true,
+        },
+      }
+    );
+    gsap.fromTo(
       aboutLeftText,
       { y: "0" },
       {
@@ -63,6 +79,22 @@ const Homepage = () => {
           trigger: mainBody,
           start: "top bottom",
           end: "bottom bottom",
+          toggleActions: "play none none reverse",
+          scrub: true,
+        },
+      }
+    );
+    gsap.fromTo(
+      aboutLeftText,
+      { autoAlpha: 0 },
+      {
+        duration: 1,
+        autoAlpha: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: mainBody,
+          start: "top bottom",
+          end: "top center",
           toggleActions: "play none none reverse",
           scrub: true,
         },
