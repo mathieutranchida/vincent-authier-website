@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import background from "../assets/background_1.0.jpg";
 import COLORS from "../constants";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -167,7 +166,7 @@ const Wrapper = styled.div`
 const Background = styled.div`
   height: 100vh;
   width: 100vw;
-  background-image: url(${background});
+  background-image: url("https://res.cloudinary.com/dvo6bq91o/image/upload/v1609595428/background-image/background_1.0_xpw3j6.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
