@@ -1,3 +1,21 @@
+# Vincent Authier - Athlete Website
+
+Vincent Authier - Athlete Web app is a landing page intended to present Vincent Authier as an athlete and put him in relation with potential sponsors and clients. This app is heavily based on GSAP and ScrollTriggers animations. Mathieu Tranchida did the design & development of the app.
+
+## Technologies used
+
+- React
+- Javascript
+- HTML
+- CSS
+- Email.js
+- GSAP
+- ScrollTriggers
+
+## Demo
+
+Link:
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,4 +86,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
 # vincent-authier-website
