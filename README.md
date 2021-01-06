@@ -1,6 +1,6 @@
 # Vincent Authier - Athlete Website
 
-Vincent Authier - Athlete Web app is a landing page intended to present Vincent Authier as an athlete and put him in relation with potential sponsors and clients. This app is heavily based on GSAP and ScrollTriggers animations. Mathieu Tranchida did the design & development of the app.
+Vincent Authier - Athlete Web app is a landing page intended to present Vincent Authier as an athlete and put him in relation with potential sponsors and clients. This app is heavily based on GSAP and ScrollTriggers animations. Mathieu Tranchida did the design & development of the app using Reactjs.
 
 ## Technologies used
 
@@ -14,7 +14,7 @@ Vincent Authier - Athlete Web app is a landing page intended to present Vincent 
 
 ## Demo
 
-Link:
+Link: https://youtu.be/9yIv7FQP2UA
 
 # Getting Started with Create React App
 
